@@ -12,17 +12,33 @@ class Game {
         this.player.setGame(this);
         this.obstacleManager = new ObstacleManager(this.canvas);
         
+        // Show welcome message first
+        this.showWelcomeScreen();
+        
+        // Then setup event listeners and start game loop
         this.setupEventListeners();
         this.startGameLoop();
-        
-        // Show welcome message
-        this.scoreManager.messageElement.textContent = 'Press SPACE to Start';
-        this.scoreManager.messageElement.style.display = 'block';
+    }
+
+    showWelcomeScreen() {
+        this.scoreManager.showWelcomeScreen();
+        this.state = GAME_STATES.READY;
     }
 
     setupEventListeners() {
+        // Space key to start
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Space') {
+                if (this.state === GAME_STATES.READY || 
+                    this.state === GAME_STATES.GAME_OVER) {
+                    this.startGame();
+                }
+            }
+        });
+
+        // Start button click - using event delegation for better reliability
+        document.addEventListener('click', (e) => {
+            if (e.target && e.target.id === 'startButton') {
                 if (this.state === GAME_STATES.READY || 
                     this.state === GAME_STATES.GAME_OVER) {
                     this.startGame();

@@ -179,6 +179,16 @@ class ScoreManager {
         fireworksManager.stop();
     }
 
+    showWelcomeScreen() {
+        this.messageElement.innerHTML = `
+            <h2>Welcome to Frogger!</h2>
+            <p>Are you ready for the fun?</p>
+            <button class="play-again-btn" id="startButton">Start Game</button>
+            <p class="play-again-hint">or press SPACE to start</p>
+        `;
+        this.messageElement.style.display = 'block';
+    }
+
     calculateTimeBonus() {
         const timeElapsed = this.getLevelTime();
         const timeRemaining = Math.max(0, LEVEL_TIME_LIMIT - timeElapsed);
