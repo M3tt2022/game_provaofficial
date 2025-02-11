@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frogger Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <div class="logo">FROGGER</div>
+                <div class="nav-links">
+                    <a href="#" class="active">Games</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search games...">
+                    <button class="search-icon">🔍</button>
+                </div>
+                <button class="menu-button">Menu</button>
+            </div>
+        </header>
+
+        <main class="game-section">
+            <div class="game-card">
+                <div class="game-info">
+                    <h1 class="game-title">Frogger</h1>
+                    <div class="project-author">Project by Mattia Fiacco Mazzini</div>
+                    <div class="game-tags">
+                        <span class="tag company">Supercell</span>
+                        <span class="tag category">Action</span>
+                    </div>
+                </div>
+
+                <div class="game-content">
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">🏆</span>
+                            <span id="score">0</span>
+                        </div>
+                        <div class="stat-item high-score-item">
+                            <span class="stat-icon">⭐</span>
+                            <span id="highScore">0</span>
+                            <div class="high-score-label">HIGH</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">⏱️</span>
+                            <span id="timer">30.0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">❤️</span>
+                            <span id="lives">3</span>
+                        </div>
+                    </div>
+
+                    <div class="game-canvas-container">
+                        <canvas id="gameCanvas"></canvas>
+                        <div id="gameMessage" class="game-message"></div>
+                    </div>
+
+                    <div class="game-controls">
+                        <p>Use arrow keys to move</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="nav-button prev">← Prev</button>
+                <button class="nav-button next">Next →</button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="social-links">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Youtube</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/collision.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/obstacle.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
